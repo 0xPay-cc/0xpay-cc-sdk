@@ -1,0 +1,20 @@
+{
+  "name": "0xpay-cc-sdk",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "cyrptocurrency",
+    "crypto",
+    "wallets",
+    "payment",
+    "blockchain"
+  ],
+  "devDependencies": {
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "ethers": "^6.11.1",
+    "ts-node": "^10.9.2"
+  }
+}
