@@ -1,9 +1,14 @@
 {
+  "author": "0xMowgli (contact@0xmowgli.com)",
   "name": "0xpay-cc-sdk",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:0xPay-cc/0xpay-cc-sdk.git"
+  },
   "license": "MIT",
-  "prepublish": "npx tsc",
+  "homepage": "https://github.com/0xPay-cc/0xpay-cc-sdk",
   "keywords": [
     "cyrptocurrency",
     "crypto",
@@ -17,5 +22,10 @@
   "dependencies": {
     "ethers": "^6.11.1",
     "ts-node": "^10.9.2"
+  },
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "local": "yarn tsc && yarn unlink && yarn link",
+    "pre-publish": "yarn tsc && yarn publish"
   }
 }
