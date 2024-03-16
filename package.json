@@ -1,7 +1,7 @@
 {
   "author": "0xMowgli (contact@0xmowgli.com)",
   "name": "0xpay-cc-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
