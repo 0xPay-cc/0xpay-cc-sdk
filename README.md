@@ -1,14 +1,14 @@
 ## Multi-Blockchain Wallet SDK Documentation
 
-This SDK enables developers to seamlessly integrate a crypto deposit system into their applications by generating private keys and public addresses using a user's identity (e.g., email, UUID) and a developer-defined password. It supports Ethereum, Solana, and Tron, providing a versatile tool for managing blockchain transactions.
+An open-source SDK designed for a wide range of use cases across various blockchains. This tool is perfect for developers looking to generate mass wallets, seamlessly integrate crypto payments for users by assigning them unique public addresses based on their IDs or emails, and monitor fund deposits to update balances accordingly. Only the creator has access to manage private keys securely, thanks to encrypted passwords. Plus, devs can leverage WebSockets for real-time wallet activity monitoring.. It supports Ethereum, Solana, and Tron and more.
 
 ### Features
 
 * Generate private keys and public addresses using a user's identity and a developer-defined password.
 * Supports 
-    - Ethereum : live,
-    - Solana : live 
-    - Tron : coming soon.
+    - Ethereum ✅
+    - Solana : ✅ 
+    - Tron : ✅
 
 
 ### Use Case Summary
