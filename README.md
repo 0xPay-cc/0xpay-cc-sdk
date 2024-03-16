@@ -5,7 +5,10 @@ This SDK enables developers to seamlessly integrate a crypto deposit system into
 ### Features
 
 * Generate private keys and public addresses using a user's identity and a developer-defined password.
-* Supports Ethereum, Solana, and Tron network.
+* Supports 
+    - Ethereum : live,
+    - Solana : live 
+    - Tron : coming soon.
 
 
 ### Use Case Summary
