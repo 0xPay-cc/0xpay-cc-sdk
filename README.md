@@ -1,44 +1,70 @@
-## Multi-Blockchain Wallet SDK Documentation
+<h1 align="center">Multi-Blockchain Wallet SDK Documentation</h1>
 
-An open-source SDK designed for a wide range of use cases across various blockchains. This tool is perfect for developers looking to generate mass wallets, seamlessly integrate crypto payments for users by assigning them unique public addresses based on their IDs or emails, and monitor fund deposits to update balances accordingly. Only the creator has access to manage private keys securely, thanks to encrypted passwords. Plus, devs can leverage WebSockets for real-time wallet activity monitoring.. It supports Ethereum, Solana, and Tron and more.
+<p align="center">Welcome to the Multi-Blockchain Wallet SDK, an innovative and versatile open-source tool designed for developers across a variety of blockchain platforms. This SDK simplifies the creation of wallets, integration of cryptocurrency payments, and the management of crypto assets by leveraging user-specific information, such as IDs or emails, to generate unique public addresses. With exclusive access to private keys through encrypted passwords, developers can ensure the security of the wallets while enabling real-time monitoring of wallet activities via WebSockets. Currently, the SDK offers support for Ethereum, Solana, and Tron, with plans to expand to additional blockchains.</p>
 
-### Features
+---
 
-* Generate private keys and public addresses using a user's identity and a developer-defined password.
-* Supports 
-    - Ethereum ✅
-    - Solana : ✅ 
-    - Tron : ✅
+## 🌐 Features
 
+- **Wallet Generation**: Securely generate private keys and public addresses using a user's unique identifier and a developer-defined password.
+- **Blockchain Support**:
+  - Ethereum, BSC, Polygon, Avalanche,Optimism, Arbitrum,HECO,Harmony,Fantom✅
+  - Solana ✅
+  - Tron ✅
+  - Bitcoin ✅
+- **Real-Time Monitoring**: Coming Soon.
 
-### Use Case Summary
+## 🛠 Getting Started
 
-Developers can utilize this SDK to:
+To begin using the SDK, follow these steps:
 
-1. Create wallets with private keys derived from user identifiers and a secure password.
-2. Share the public address with the user for deposit purposes.
-3. Monitor these addresses to:
-    * Verify deposits.
-    * Update user balances accordingly.
-4. Manage funds, including withdrawals, for a comprehensive crypto deposit system.
+**Installation**:
+`npm install 0xpay-cc-sdk`
 
-### Getting Started
+## Generating key pair from identifier and a defined password
 
-1. Install the SDK (installation instructions to be added).
-2. Use the `generateEvmPrivateKeyForUserIdentity` function with:
-    * User's identity.
-    * Developer's password.
-    * Iterations.
-    * key Length.
-3. Provide the user with the public address for deposits.
-4. Implement webhooks or a monitoring system to track transactions to the public address.
-5. Update user balances upon successful deposits.
-6. Manage withdrawals as needed.
+The core functionality of our SDK revolves around the generation of wallet keys for different blockchains. Here's a guide to getting started with each supported blockchain:
 
-**This approach ensures:**
+### Ethereum
 
-* Secure transactions.
-* User balance management.
-* Full control over the funds by the developer.
+- **Function:** `generateEvmPrivateKeyForUserIdentity`
+- **Description:** Dynamically generates an Ethereum key pair (private and public keys) using a user's identifier and a developer-defined password. This method allows developers to securely manage wallet access while providing the necessary wallet functionalities to users.
+- **Parameters:**
+  - `identifier` (string): A unique identifier for the user, such as email or username.
+  - `password` (string): A developer-defined password used in the key generation process.
+  - `iterations` (number, optional): The number of iterations for the PBKDF2 key derivation function, defaults to 100,000.
+  - `keyLength` (number, optional): The desired length of the derived key in bytes, defaults to 32.
+- **Returns:** An `EthereumKeyPair` object containing the Ethereum address, private key, and both compressed and uncompressed public keys.
 
-**Note:** Replace "(installation instructions to be added)" with the actual installation instructions for your SDK.
+### Solana
+
+- **Function:** `generateSolanaPrivateKeyForUserIdentity`
+- **Description:** Generates a Solana key pair from a user's identifier and a password. It produces a private key which is then used to create a keypair, making the public key available to the user.
+- **Parameters:**
+  - `identifier` (string): The user's unique identifier.
+  - `password` (string): The password combined with the identifier to generate the key.
+  - `iterations` (number, optional): Number of iterations for PBKDF2, optional.
+  - `keyLength` (number, optional): Desired key length, optional.
+- **Returns:** A `SolanaKeyPair` object containing the private and public keys.
+
+### Tron
+
+- **Function:** `generateTronPrivateKeyForUserIdentity`
+- **Description:** Similar to the Ethereum and Solana functions, this function generates a Tron key pair using the user's identifier and a password. It is designed to secure wallet creation and management by providing only the public key to the user.
+- **Parameters:**
+  - `identifier` (string): The user's unique identifier.
+  - `password` (string): The password combined with the identifier to generate the key.
+  - `iterations` (number, optional): Number of iterations for PBKDF2, optional.
+  - `keyLength` (number, optional): Desired key length, optional.
+- **Returns:** A `TronKeyPair` object including the private key and public key (address).
+
+### Bitcoin
+
+- **Function:** `generateBitcoinPrivateKeyForUserIdentity`
+- **Description:** Generates a Bitcoin key pair from a user's identifier and a password. It produces a private key which is then used to create a keypair, making the public key available to the user.
+- **Parameters:**
+  - `identifier` (string): The user's unique identifier.
+  - `password` (string): The password combined with the identifier to generate the key.
+  - `iterations` (number, optional): Number of iterations for PBKDF2, optional.
+  - `keyLength` (number, optional): Desired key length, optional.
+- **Returns:** A `BitcoinKeyPair` object containing the private, private WIF and public keys.
