@@ -22,6 +22,7 @@
   "dependencies": {
     "@solana/web3.js": "^1.91.1",
     "bip32": "^4.0.0",
+    "bip39": "^3.1.0",
     "bitcoinjs-lib": "^6.1.5",
     "ecpair": "^2.1.0",
     "ethers": "^6.11.1",
